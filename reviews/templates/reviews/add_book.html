@@ -1,0 +1,10 @@
+{% extends "reviews/base_generic.html" %}
+{% block content %}
+<div style="height: 11rem;"></div>
+<h2>Add a Book</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Book</button>
+    </form>
+{% endblock %}

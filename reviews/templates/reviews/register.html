@@ -1,0 +1,24 @@
+{% extends "reviews/base_generic.html" %}
+{% block content %}
+<div style="height: 35rem;"></div>
+  <section class="login-container-outer" style="align-items: center; justify-content: center;">
+    <div class="login-container" style="width: 30rem;">
+        <!-- <div class="circle circle-one"></div> -->
+        <div class="form-container">
+            <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+            <h1 class="login-heading">REGISTER</h1>
+            <form method="POST">
+              {% csrf_token %}
+              {{form.as_p}}
+              
+              <button type="submit"  style="color: white;">Register</button>
+            </form>
+            <div class="register-forget opacity">
+                <a href="{% url 'login' %}" style="color: white;">LOGIN</a>
+            </div>
+        </div>
+        <!-- <div class="circle circle-two"></div> -->
+    </div>
+    <div class="theme-btn-container"></div>
+</section>
+{% endblock %}

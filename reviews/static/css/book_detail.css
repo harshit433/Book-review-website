@@ -1,0 +1,37 @@
+
+img{
+    max-width: 14rem;
+    border-radius: 1rem;
+}
+
+.container-detail{
+    display: flex;
+    width: 80rem;
+    margin-left: 2rem;
+    align-items: center;
+
+}
+
+.container-detail img{
+    order: 1;
+    float: right;
+}
+
+.container-detail::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.checked {
+    color: orange;
+  }
+
+.unchecked {
+    color: white;
+}
+
+.review-form{
+    display: none;
+    color: blue;
+}

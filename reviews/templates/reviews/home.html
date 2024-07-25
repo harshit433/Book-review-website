@@ -1,0 +1,28 @@
+{% extends "reviews/base_generic.html" %}
+{% block content %}
+<div class="hero" style="background-image: url('/static/images/Welcome to Book Haven.png');"></div>
+  <h2 class = 'book_heading'>Find your next Book</h2>
+  <div class="grid-container">
+    {% for book in books %}
+    <div class = 'grid-item'>
+      <div class = "card">
+        <img src="media/{{book.cover_image}}" alt="">
+        <div class="card-content">
+          <h2>
+            {{book.title}}
+          </h2>
+          <p>
+            By {{book.author}}
+          </p>
+          <a href="{% url 'book_detail' book.id %}" class="button">
+            Find out more 
+            <span class="material-symbols-outlined">
+              arrow_right_alt
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}

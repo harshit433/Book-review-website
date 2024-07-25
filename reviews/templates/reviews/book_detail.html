@@ -1,0 +1,56 @@
+{% extends "reviews/base_generic.html" %}
+{% block content %}
+<div style="height: 10rem;"></div>
+  <div class="container-detail">
+  <img src="{{ book.cover_image.url }}" alt="book.title">
+  
+  <div style="width: 40rem;">
+    <h2 style="color: white;"> {{ book.title }} </h2>
+        <p>{{book.description}}</p>
+        <footer style="color: white;">By {{ book.author }}</footer>
+        {% for i in average_rating %}
+        <span class='{{i}}'></span>
+        {%endfor%}
+        
+  {% if user.is_authenticated %}
+  <button  class = 'review-button' style="margin-top: 1rem;" onclick="addreview()" >
+    <span>Add a review</span>
+  <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+  </svg>
+  </button>
+  {% endif %}
+  
+      </div>
+      <div style="width: 30rem;"></div>
+  </div>
+  <div style="height: 2rem;"></div>
+  <h3 style="color: white; margin-top: 2rem; margin-left: 2rem;">Reviews</h3>
+  <ul style="color: white; margin-left: 2rem;">
+    {% for review in book.reviews.all %}
+      <li>
+        <strong style="color: white;">{{ review.reader.first_name}} {{ review.reader.last_name }}</strong> rated {{ review.rating }} stars
+        <p style="color: white;">{{ review.review_text }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class = 'center review-form' id ='newreview'>
+    <h1>New Review</h1>
+    <form method = "POST">
+      {% csrf_token %}
+      <div class="inputbox">
+        <!-- <input type="text" required="required"> -->
+         {{form.review_text}}
+        <span>{{form.review_text.label}}</span>
+      </div>
+      <div class="inputbox">
+        <!-- <input type="text" required="required"> -->
+        {{form.rating}}
+        <span>{{form.rating.label}}</span>
+      </div>
+      <div class="inputbox">
+        <button type="submit" value="Submit">Submit Review</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
