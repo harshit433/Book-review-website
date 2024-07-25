@@ -24,16 +24,21 @@ Welcome to the Book Review Website! This Django-based project allows users to re
 ## Screenshots
 
 ### Home Page
-![Home Page](screenshots/home_page.png)
+![homepage1](https://github.com/user-attachments/assets/0d96c00d-8336-4edf-ac55-0cf3dc1da129)
+![homepage2](https://github.com/user-attachments/assets/f373fcef-3a15-47d6-8bf7-d2b2d61caed9)
 
 ### Book Details Page
-![Book Details](screenshots/book_details.png)
+![bookdetailspage](https://github.com/user-attachments/assets/993c1e4a-4537-4e70-a3d6-9d0e00eaebec)
+![bookdetailspage1](https://github.com/user-attachments/assets/776b9245-833e-4bca-80a7-5806f203d32b)
 
 ### Add a Review
-![Add Review](screenshots/add_review.png)
+![addreviewpage](https://github.com/user-attachments/assets/ec4fe8ac-1eb8-4406-9835-2b9154e39910)
 
-### User Profile
-![User Profile](screenshots/user_profile.png)
+### Login Page
+![loginpage](https://github.com/user-attachments/assets/e011d9de-68f8-4c46-9693-26787be05ba7)
+
+### Register Page
+![registerpage](https://github.com/user-attachments/assets/37612aa3-6042-4e9d-aa7d-50f6ba390097)
 
 ## Installation
 
